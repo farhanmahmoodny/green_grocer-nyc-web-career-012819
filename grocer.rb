@@ -19,9 +19,8 @@ def apply_coupons(cart, coupons)
     coupons.each do |coupon|
       if food == coupon[:item] && food[:count] >= coupon[:num]
         value[:count] = value[:count] - coupon[:num]
-        with_coupon["#{food} W/COUPON"][:price] == coupon[:cost]
-        with_coupon["#{food} W/COUPON"][:clearance] == food[:clearance]
-        with_coupon["#{food} W/COUPON"][:count] == 1
+        if ["#{food} W/COUPON"]
+          ["#{food} W/COUPON"]
       end
     end
     with_coupon[food] = value
